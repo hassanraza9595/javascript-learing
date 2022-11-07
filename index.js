@@ -205,7 +205,25 @@ console.log(message);
 //Bracket Notation to nth First Character in String
 // find the 10 character
 console.log(message[10]);
+var firstName = "Hassan";
+var lastLetter = firstName[firstName.length - 1];
+console.log(lastLetter);
 
+// Word Blanks
+function wordBlanks(myNoun, myAdjective, myVerb,myAdverb){  
+    var result = "";
+    result += "The"+myAdjective+myNoun+myVerb+" to the store "+myAdverb;
+
+    return result;
+}
+
+console.log(wordBlanks(' dog', ' big', ' ran', 'quickly'));
+
+// Store Multiple Values in Array
+var ourArray = ["Hassan", 23];
+var myInfo = ["Hassan", 23, "BSIT", "Gaji Khuhawar"];
+
+// Nested Arrays
 
 
 
