@@ -224,6 +224,467 @@ var ourArray = ["Hassan", 23];
 var myInfo = ["Hassan", 23, "BSIT", "Gaji Khuhawar"];
 
 // Nested Arrays
+                        // index 0      index 1
+var myNestedArray = [["Hassan", "Raza"],["BSIT", 23]];
+                    //[0][0]   [0][1]  [1][0] [01][1]
+console.log(myNestedArray[1]); // access the 2nd array 
+console.log(myNestedArray[1][0]); // access the first element of 2nd array
+
+// Access Array Data with Indexes
+var ourArray = [50,60,70];
+var myData = ourArray[0]; // equals 50
+console.log(myData);
+
+//Modify Array Data With Indexes
+ ourArray = [80,90,100]; // modified the whole array
+ console.log(ourArray);
+// modify single element 
+ourArray[0] = 120;
+console.log(ourArray[0]);
+//Accessing multi-Dimension array
+var ourArray = [[1,2,3],[4,5,6],[7,8,9],[[10,11,12],[13,14,15]]];
+console.log(ourArray[3][0][0]);
+
+//Munipulate Arrays with push()
+var myFriends = ["Farhan", "Imtiaz", "Asif"];
+console.log(myFriends);
+myFriends.push("Junaid", "Wasim");
+console.log('After Push ',myFriends);
+
+// Multi-dimension push()
+var myFriends = [["Imtiaz", "Farhan"], ["Asif", "Junaid"]];
+myFriends.push(["Wasim", "Salman"]);
+console.log(myFriends);
+
+//Munipulate Arrays with pop()
+var myNumbers = [12,15,21,28,35];
+console.log(myNumbers);
+myNumbers.pop(); // last index element is fired that was 35
+console.log(myNumbers);
+
+var nameAndAge = [['Hassan', 23],['Asif', 25]];
+var nameAndAgeFired =  nameAndAge.pop(); // pop() remove last index in the array.
+console.log("Fired",nameAndAgeFired);
+console.log(nameAndAge);
+
+// Munipulate Arrays with shift()
+// shift(): It removes first element in the array.
+var nameAndAge = [['Hassan', 23],['Asif', 25]];
+var firedArray = nameAndAge.shift();
+console.log('Fired', firedArray);
+console.log(nameAndAge);
+
+// Munipulate Arrays with unshift()
+// unshift(): It insert element in the first index of the array.
+var nameAndAge = [['Hassan', 23],['Asif', 25]];
+console.log('Array After Shift function');
+nameAndAge.shift(); // first index-element removed
+console.log(nameAndAge);
+
+nameAndAge.unshift(['Hassan', 23]); 
+console.log('Array After unshift function')
+console.log(nameAndAge);
+
+// Shopping List
+var shoppingList = [['milk', 3],['tea',5],['sugar', 1],['mix-fruit', 1]];
+console.log(shoppingList);
+
+// ================== Creating Array with Array Method ====================== //
+
+arr1 = new Array("purple", "green", "yellow"); // not recommended
+arr1.push('red');     // ["purple", "green", "yellow", "red"] // red at last index
+arr1.unshift('pink'); // ["pink", "purple", "green", "yellow", "red"] // pink at first index
+arr1.pop();           // ["pink", "purple", "green", "yellow"] // red removed
+arr1.shift();         // ["pink", "purple", "green", "yellow"] // pink removed
+// Final Array Output
+console.log(arr1);
+
+// ========================================================================== //
+
+// *****************************  Functions ********************************* // 
+//  write reuseable code with functions
+
+// create a simple function which print Hello World on console.
+
+function simple(){
+    console.log("Hello World!");
+}
+
+// call the function to exceute
+simple(); 
+
+// Passing Values to functions with arguments
+function simpleWithArgument(greet){
+    console.log(greet);
+}
+
+// call the function and pass a value in the brackets
+simpleWithArgument('Hi, Good Afternoon!');
+simpleWithArgument('Hi, Good Evening!');
+simpleWithArgument('Hi, Good Night!');
+// you can pass any value to the function
+simpleWithArgument(1000);
+
+// passing value to function
+function ourFunctionWithArgs(a,b){
+    console.log(a-b);
+}
+
+ourFunctionWithArgs(10,5);
+
+// Global Scope and Functions
+var myGlobal = 10;
+function fun1(){
+    // assign 5 to oppsGlobal Here
+        oopsGlobal = 5; //if there is no var keyword while defining the 
+                    // variable it becomes automatically globalScope.                 
+}
+
+function fun2(){
+    var output = "";
+    if(typeof myGlobal != "undefined"){
+        output += "myGlobal: " + myGlobal;
+    }
+    if(typeof oopsGlobal != "undefined"){
+        output += "oopsGlobal: " + oopsGlobal;
+    }
+    console.log(output)
+}
+
+fun1();
+fun2();
+
+// Local Scope and Functions
+function localScope(){
+    var myVar = 10; // accessible within function
+    console.log(myVar);
+}
+localScope();
+// console.log(myVar); // it gives error because of scope. 
+
+// Local vs Global Scope in Function
+
+var outerWear = "T-Shirt";
+function myOutFit(){
+    var outerWear = "Sweater"; // when global and local variable inside the 
+    return outerWear;          // function, it preference to local variable.
+}                              // that's why Sweater is printed. 
+                                            
+console.log(myOutFit());  // output Sweater, Why Sweter?
+console.log(outerWear);  // now T-Shirt will be printed because 
+                        //  it gives preference to global variable.           
+
+// Return A Value From a Function with Return 
+function timesFive(num) {
+    return num * 5;
+}
+
+console.log(timesFive(5));
+
+// Understanding Undefined Value Returned From A Function 
+ var sum = 5;
+ function addNumber(){
+    sum += 3;
+ }
+
+ console.log(addNumber()); // undefined
+
+// Assignment with a returned value
+var changed = 0;
+function change(num) {
+    return (num + 3)/ 2
+}
+
+changed = change(9); // Assignment with a returned value
+console.log(changed);
+
+// Stand In Line
+function nextInLine(arr, item){
+    arr.push(item);
+    return arr.shift();
+}
+
+var testArray = [1,2,3,4,5];
+console.log("Before: "+ JSON.stringify(testArray));
+console.log(nextInLine(testArray, 6));
+console.log("After: "+ JSON.stringify(testArray));
+
+// Boolean Values
+function boolean() {
+    return true
+}
+
+var boolean = boolean();
+console.log(boolean);
+
+// Use conditional logic with if statements
+function trueOrFalse(wasThatTrue){
+    if(wasThatTrue){
+        return "Yes, that was true";
+    }
+    return "No, that was false";
+}
+
+console.log(trueOrFalse(true));
+
+// Comparsion with the equality operator
+function testEqual(val) {
+    if(val == 12){
+        return "Equal";
+    }
+    return "Not Equal";
+}
+console.log(testEqual(11));
+
+//  Comparsion with the Strict equality operator
+if(3 =='3'){
+    console.log('True');
+}   
+// strict equality operator
+if(3 ==='3'){
+    console.log('True');
+}else{
+    console.log('False');
+}
+
+// Practice Comparing Different Values
+console.log("Practice Comparing Different Values")
+function compareEquality(a,b){
+    if(a == b){
+        console.log("TRUE")
+    }
+    if(a === b){
+        console.log("FALSE");
+    }else{
+        console.log("ELSE IS RUNNING: (a === b) condition is fail")
+    }
+}
+compareEquality(10, "10");
+
+// Comparsion with the inequality operator
+function notEqual(val){
+    if(val != 100){
+        console.log('Not Equal')
+    }
+    else{
+        console.log("(100 != '100' :Running')");
+    }
+}
+notEqual('100');
+
+// Strict inequality operator
+function notEqualStrict(val){
+    if(val !== 100){
+        console.log('Not Equal')
+    }
+    else{
+        console.log("(100 != '100' :Running')");
+    }
+}
+notEqualStrict('100');
+
+// Comparsions with the logical AND(&&) Operator
+if(100 == '100' && 100 ==='100'){
+    console.log('IF Running');
+}else{
+    console.log('ELSE IS RUNNING');
+}
+
+// Comparsions with the logical OR (||) Operator
+if(100 == '100' && 100 ==='100'){
+    console.log('IF Running');
+}else{
+    console.log('ELSE IS RUNNING');
+}
 
 
+// ELSE IF Statements
+function testElseIf(val) {
+    if(val < 10){
+        return "Greater than 10" 
+    } else if(val > 20) {
+        return "Less than 20"
+    } else {
+        return "Between 10 and 20";
+    }
+    console.log(val);
+}
+var value = testElseIf(18);
+console.log(value);
+
+//  logical order in If else statement 
+/*  
+if(val < 5){
+
+} else if(val < 10){
+
+}else{
+    Greater than or equal to 10.
+}
+*/
+
+// Chaining if else 
+/* 
+(val < 5)
+(val < 10)
+(val < 15)
+(val < 20)
+(val >= 20)
+*/
+
+// Golf Code
+
+var names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home"];
+function golfScore(par, strokes) {
+    if(strokes == 1){
+        return names[0];
+    } else if(strokes <= par - 2){
+        return names[1]
+    } else if(strokes == par - 1){
+        return names[2]
+    } else if(strokes == par ){
+        return names[3]
+    } else if(strokes <= par + 1){
+        return names[4]
+    } else if(strokes <= par + 2){
+        return names[5]
+    } else if(strokes <= par + 3){
+        return names[6]
+    }
+    
+    return "Change ME";
+}
+console.log(golfScore(5,4));
+
+
+// Switch Statements
+// The switch statement is used to perform 
+// different actions based on different conditions.
+function caseInSwitch(val) {
+switch(val) {
+  case 1:
+    answer = "alpha";
+    break;
+  case 2:
+    answer = "beta";
+    break;
+  case 3:
+    answer = "gamma";
+    break;
+  case 4:
+    answer = "delta";
+    break;    
+  default:
+    answer = "default";  
+          } // switch end
+
+    return answer;
+}
+
+console.log(caseInSwitch(1));
+
+// Multiple Identical Options in Switch Statements
+function sequentialSizes(val){
+    var answer = "";
+    switch(val){
+        case 1:
+        case 2:
+        case 3:
+            answer = "Low";
+            break;
+        case 4:
+        case 5:
+        case 6:
+            answer = "Mid";
+            break;    
+        case 7:
+        case 8:
+        case 9:
+            answer = "High";
+            break;            
+    }   
+    return answer
+}
+
+console.log(sequentialSizes(8));
+
+// Replace if else chains with switch
+// If Else Chain
+function ifElseChain(val){
+    answer = 0;
+    if(val === 1){
+        answer = 1;
+    } else if( val === 2){
+        answer = 2;
+    } else if(val === 3){
+        answer = 3;
+    }
+
+    return answer;
+}
+
+console.log(ifElseChain(2));
+
+// replace above with switch statement
+function switchChain(val){
+    answer = 0;
+    switch(val) { // start switch
+        case 1:
+            answer = 1;
+            break;
+        case 2:
+            answer = 2;
+            break;
+        case 3:
+            answer = 3;
+            break;
+                } // end switch
+    return answer;
+}
+
+console.log(switchChain(3));
+
+// Returning a Boolean Values from Functions
+function isLess(a,b){
+    return a < b;
+}
+console.log(isLess(18,15));
+
+// Returning Early Pattern from function.
+function abTest(a,b){
+    if(a < 0 || b < 0){
+        return undefined;
+    }
+    return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+}
+console.log(abTest(-2,2));
+
+// Counting Cards
+
+var count = 0;
+function cc(card){
+    switch(card){
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        case 6:
+            count++;
+            break;
+        case 10:
+        case "J":
+        case "Q":
+        case "K":
+        case "A":    
+            count--;
+            break;            
+    }
+    var holdbet = "Hold";
+    if(count > 0) {
+        holdbet = 'Bet';
+    }
+    
+    return count + " " + holdbet ;
+}
+console.log(cc("J")); 
 
