@@ -688,3 +688,176 @@ function cc(card){
 }
 console.log(cc("J")); 
 
+// Javascript Objects
+// Objects are variables too. But objects can contain many values.
+
+// let's create object of Dog
+
+var Dog = {
+    name: "Quincy",
+    legs: 4,
+    tails: 1,
+    friends: ['None'],
+}
+// accessing object property using dot notation
+var dogName = Dog.name;
+console.log(dogName);
+
+// accessing object properties with braket notation
+var dogLegs = Dog["legs"];
+console.log(dogLegs);
+
+// accessing object properties with variables
+var myData = {
+    name: "Hassan Raza",
+    dob: '03/02/1899',
+    cnic: 434070443125101,
+    emailAddress: 'hassanraza.000046@gmail.com',
+    qualification: 'graduation'
+}
+
+var myDataCnic = 'cnic';
+console.log('using variable to access object property: ', myData[myDataCnic]); 
+
+// Updating Object Property
+myData.cnic = 4340704435100; // cnic property changed
+myData.name = "Raza Hassan"; // name property changed
+console.log(myData.name)
+
+// Add new property to an Object
+myData.livingPlace = "Karachi"; // updating using dot 
+myData['job'] = 'dataAnalyst'; // updating using brakets
+console.log(myData.job);
+
+// Delete property from an object 
+delete myData.job;
+delete myData.cnic;
+console.log(myData);
+
+// Using Objects for lookups
+function phoneticLookup(val){
+    var result = " ";
+
+    var lookup = {
+        "alpha": "adams",
+        "bravo": "boston",
+        "charlie": "Chicago",
+        "delta": "denver",
+        "echo": "Easy",
+        "foxtrot": "frank"
+    };
+
+    result = lookup[val];
+
+    return result
+}
+console.log(phoneticLookup("foxtrot"));
+
+// Testing Objects for Properties
+function checkObj(checkProp) {
+    if(myData.hasOwnProperty(checkProp)){
+        return myData[checkProp];
+    } else {
+        return "Not Found";
+    }
+}
+
+console.log(checkObj("hello"));
+
+// Manipulating Complex Objects
+var music = [
+    {
+        "artist": "Rahat Fatah",
+        "title": "zaroori tha",
+        "release_year": 2016,
+        "formats": [
+            "CD", "8T", "LP"
+        ],
+        "gold": true 
+    },
+    {
+        "artist": "Asif",
+        "title": "apna tha",
+        "release_year": 2022,
+        "formats": ["tik-tok video"]
+    }
+]
+
+console.log(music[0].formats[0]);
+
+// Accessing Nested Objects
+var myStorage = {
+    "car":{
+        "inside":{
+            "glove box": "maps",
+            "passenger seat": "crumbs"
+        },
+        "outside":{
+            "trunk": "jack"
+        }
+    }
+};
+
+var gloveBoxContent = myStorage.car.outside["trunk"];
+console.log(gloveBoxContent);
+
+// Accessing Nested Arrays
+var myPlants = [
+    {
+        type:"flowers",
+        list: [
+            "rose",
+            "tulip",
+            "dandelion"
+        ]
+    },
+    {
+        type:"trees",
+        list:[
+            "fir",
+            "pine",
+            "birch"
+        ]
+    }
+];
+
+var secondTree = myPlants[1].list[1]
+console.log(secondTree);
+
+// Record Collection
+var collection = {
+    "1":{
+        "album": "one",
+        "artist": "asif",
+        "tracks":[
+            "apna tha",
+            "tujhe chahen ga"
+        ]
+    },
+       "2":{
+        "artist": "asif",
+        "tracks": []
+    },
+       "3":{
+        "album": "one",
+        }
+};
+
+var collectionCopy = JSON.parse(JSON.stringify(collection));
+                //      2   artist  new
+function updateRecords(id, prop, value){
+    if(value === ""){
+        delete collection[id][prop];
+    } else if(prop == "tracks"){
+        collection[id][prop] = collection[id][prop] || [];
+        collection[id][prop].push(value);
+    } else {
+        collection[id][prop] = value;
+    }
+
+    return collection;
+}
+
+// console.log(updateRecords(2, "tracks", "Rahat fatah"));
+// console.log(updateRecords(2, "tracks", "Rahat"));
+console.log(updateRecords(1, "tracks", "Rahat"));
