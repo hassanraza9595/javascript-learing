@@ -840,11 +840,11 @@ var collection = {
     },
        "3":{
         "album": "one",
-        }
+        },
 };
 
 var collectionCopy = JSON.parse(JSON.stringify(collection));
-                //      2   artist  new
+               
 function updateRecords(id, prop, value){
     if(value === ""){
         delete collection[id][prop];
@@ -860,4 +860,21 @@ function updateRecords(id, prop, value){
 
 // console.log(updateRecords(2, "tracks", "Rahat fatah"));
 // console.log(updateRecords(2, "tracks", "Rahat"));
-console.log(updateRecords(1, "tracks", "Rahat"));
+// console.log(updateRecords(3, "tracks", "Rahat"));
+
+// console.log(collection)
+
+// While Loops 
+var myArray = []
+var i = 0;
+while(i < 6) {
+    myArray.push(i);
+    if(i === 5){
+        myArray.pop();
+    }
+    i++;
+}
+console.log(myArray);
+
+
+
