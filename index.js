@@ -876,5 +876,283 @@ while(i < 6) {
 }
 console.log(myArray);
 
+// For Loops
+var myArr = []
+for (var i = 0; i < 6; i++){
+    myArr.push(i);
+}
+console.log(myArr);
 
+// Even/Odd Program
+//Even Program
+var myArr_2 = []
+for (var i = 0; i < 10; i += 2){
+    myArr_2.push(i);
+}
+console.log(myArr_2);
 
+// odd program
+var myArr_3 = []
+for (var i = 1; i < 10; i += 2){
+    myArr_3.push(i);
+}
+console.log(myArr_3);
+
+// Count Backwards with a for loop
+var arr = []
+for (var i = 10; i > 0; i -= 2){
+    arr.push(i);
+}
+console.log(arr);
+
+// backward odd numbers
+var arr_ = []
+for (var i = 9; i > 0; i -= 2){
+    arr_.push(i);
+}
+console.log(arr_);
+
+// Iterate Through an Array with a for loop.
+var myArr = [10,12,14,16];
+var total = 0;
+for (var i = 0; i < myArr.length; i++) {
+    total += myArr[i];
+}
+console.log(total);
+
+// Nesting for loops
+function multiplyAll(arr) {
+    var product = 1;
+    for (var i = 0; i < arr.length; i++) { // outter for loop 
+        for(var j = 0; j < arr[i].length; j++){
+            product *= arr[i][j];
+        }
+        /* How loops work;
+        console.log(1*1); // first iterate outer,   1 inner
+        console.log(1*2); // first iterate outer,   2 inner
+        console.log(2*3); // second iterate outer,  1 inner
+        console.log(6*4); // second iterate outer,  2 inner
+        console.log(24*5); // third iterate outer,  1 inner
+        console.log(120*6); // third iterate outer, 2 inner
+        console.log(720*7); // third iterate outer, 3 inner after that
+                         outer condition fail, loop terminate
+        */
+    }
+    return product;
+}
+
+var product = multiplyAll([[1,2],[3,4],[5,6,7]]);
+console.log(product);
+
+// Iterate with do while loops
+var num = 10;
+do{
+    console.log('play with num ', num); 
+    num++;
+}
+while(num > 20)
+console.log(num);
+
+// Profile Lookup
+ var contact = [
+    {
+        firstName: "Asif",
+        lastName: "Bashir",
+        number: "+92",
+        likes: ["Pizza", "Burger", "Chicken Burger"]
+    },
+    {
+        firstName: "Farhan",
+        lastName: "Ali",
+        number: "+93",
+        likes: ["Chicker Karahi", "Burger", "Chawal"]
+    },
+    {
+        firstName: "Junaid",
+        lastName: "Qureshi",
+        number: "+94",
+        likes: ["Juice", "Coding", "Chicken"]
+    },
+    {
+        firstName: "Hassan",
+        lastName: "Raza",
+        number: "+95",
+        likes: ["Mutton Chorma", "Sabzi Mix", "Kheer"]
+    },
+ ];
+
+ function lookUpProfile(name, prop){
+    for(var i = 0; i < contact.length; i++){
+        if(contact[i].firstName === name){
+            return contact[i][prop] || "No such property";
+        }
+    }
+    return "No such contact";
+ }
+
+ var data = lookUpProfile("Junaid", "number");
+ console.log(data);
+// console.log(contact[2]['likes'])
+
+// Generate Random Fraction
+function randomFraction() {
+
+    return Math.random();
+}
+console.log(randomFraction()); // Math.random(), generates number between 0 and 1.
+
+// Generate Random Whole Numbers
+function wholeRandomNumber() {
+    return Math.floor(Math.random() * 10);
+}
+console.log(wholeRandomNumber());
+
+// Generate Random Whole Numbers within a Range
+function randomRange(myMin, myMax){        
+    return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+} 
+
+console.log(randomRange(10,15));
+
+// ParseInt Function
+function convertToInteger(str) {
+   return parseInt(str); // it takes string and convert it into number.
+}
+console.log(convertToInteger("56"));
+
+// Use the parseInt function with a Radix
+function convertToInteger(str) {
+    return parseInt(str, 2); // it takes binary string and convert into decimal.
+ }
+ console.log(convertToInteger("10011"));
+
+// Use the conditional (Ternary) Operator.
+var num = 10
+num = num > 5 ? 'ternary' : false;
+console.log(num); 
+
+// Use multiple conditional (Ternary) Operators.
+function checkSign(num) {
+    return num > 0 ? "positive" : num < 0 ? "negative" : "zero";
+}
+console.log(checkSign(-1));
+
+// Difference between var and let keywords
+let catName = 'Qunicy';
+// let catName = "Fancy"; // gives error
+// using let you can not declare a variable twice. but you can in var.
+var dogName = "Shelly";
+var dogName = "Dolley"; // It's fine 
+
+// Compare Scopes of the var and let keywords
+function checkScope() {
+    "use strict"; // not statement
+     var i = "function scope";
+     if(true){
+        let i = "block scope";
+        console.log("Block scope i is: ", i);
+     }
+     console.log("Function scope i is: ", i);
+     return i;
+}
+checkScope();
+
+// Declare a read-only variable with the const keyword
+const sentence_ = "This is a room"; // const: read only 
+console.log(sentence_); 
+// sentence_ = sentence_ + "this is a house"; // error, read only
+// console.log(sentence_);
+
+// Mutate an Array Declared with const
+const s = [5,6,7];
+console.log(s);
+function editInPlace(){
+    "use strict";
+    s[0] = 7;
+    s[1] = 6;
+    s[2] = 5;
+}
+editInPlace();
+console.log(s)
+
+// Prevent Object Mutation 
+function freezeObj() {
+    "use strict";
+    const MATH_CONSTANTS = {
+        PI : 3.14
+    };
+
+    // Object.freeze(MATH_CONSTANTS); // restrict to change, gives error
+
+    try{
+        MATH_CONSTANTS.PI = 99;
+    } catch(ex){
+        console.log(ex);
+    }
+    return MATH_CONSTANTS.PI;
+}
+
+const PI = freezeObj();
+// console.log(PI); 
+
+// Use Arrow Functions to Write Concise Anonymous Functions
+var magic = () => new Date();
+console.log(magic());
+
+// Arrow Functions with Parameter
+var numbers = (arr1, arr2) => arr1.concat(arr2);
+console.log(numbers([1,2], [3,4,5]));
+
+// Write Higher Order Arrow Function
+const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
+const squareList = (arr) => {
+    const squaredIntegers = arr.filter(num => Number.isInteger(num) && num > 0).map(x => x*x);
+    return squaredIntegers;
+} 
+const squaredIntegers = squareList(realNumberArray);
+console.log(squaredIntegers)
+
+// Write Higher Order Arrow Function
+const increment = (function(){
+    return function increment(number, value = 1) {
+        return number + value;
+    };
+})();
+
+console.log(increment(5,2));
+console.log(increment(5));
+
+// Use the Rest Opeartor with Function Parameters.
+const sumTotal = (function(){
+    return function sumTotal(...args){
+        return args.reduce((a,b) => a + b, 5);
+    };
+}) ();
+console.log(sumTotal(5));
+
+// Use the Spread Opeartor to Evaluate Arrays In-Place.
+const arr_1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr_2;
+(function(){
+    arr_2 = [...arr_1]; // copy arr1 into arr2
+    arr_1[0] = 'APPLE'
+}) ();
+console.log(arr_2);
+
+// Use Destructuring Assignment to assign variables from objects
+var destructuring_obj = {x:10,y:20,z:30};
+const {x:a_, y:b_, z:c_} = destructuring_obj;
+console.log(a_);
+
+// Destructuring Assignment with Nested Objects
+const local_Forecast = {
+    today: {min: 72, max: 80},
+    tomorrow: {min: 74, max:84}
+};
+
+const {today:{min:getTodayMin}, today:{max: getTodayMax}} = local_Forecast;
+console.log('Today Max:', getTodayMax);
+console.log('Today Min:', getTodayMin);
+console.log(local_Forecast.today.min)
+
+// 
