@@ -1155,4 +1155,89 @@ console.log('Today Max:', getTodayMax);
 console.log('Today Min:', getTodayMin);
 console.log(local_Forecast.today.min)
 
+// Use Destructuring Assignment to Assign Variables from Arrays
+const [,,,,A,B] = [1,2,3,4,5,6]
+console.log(A);
+console.log(B);
+// [A,B] = [B,A];
+
+// Use Destructuring Assignment with the rest operator;
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list){
+    const [ , , ...resArr] = list;
+    return resArr
+}
+const resArr = removeFirstTwo(source);
+console.log(resArr);
+console.log(source);
+
+/* Use Destructuring Assignment to pass an object as a
+   Function's Parameter */
+
+// this is a common way to use API CALL.
+
+const stats = {
+    max: 56.78,
+    standard_deviation: 4.34,
+    median: 34.54,
+    mode: 23.87,
+    min: -0.75,
+    average: 35.85
+};
+
+const half = (function(){
+
+    return function half({max, min}){
+        return(max + min) / 2.0;
+    };
+}) ();
+
+console.log(stats);
+console.log(half(stats));
+
+// Create Strings using template literals
+
+const person = {
+    name: "Hassan Raza",
+    age: 23
+}
+
+const greeting = `Hello, my name is ${person.name}!
+I am ${person.age} years old`;
+console.log(greeting);
+
+// Coding Challenge
+const result = {
+    success: ["max-lenght", "no-amd", "prefer-arrow-functions"],
+    failure: ["no-war", "var-on-top", "linebreak"],
+    skipped: ["id-blacklist", "no-dup-keys"]
+};
+
+function makeList(arr) {
+    const resultDisplayArray = [];
+    for(let i = 0; i < arr.length; i++){
+        resultDisplayArray.push(`<li class=""text-warning"> ${arr[i]} </li>`);
+    }
+    return resultDisplayArray; 
+}
+
+const resultDisplayArray = makeList(result.failure);
+console.log(resultDisplayArray);
+
+// Write Concise Object Literal Declarations Using Simple Fields
+const createPerson = (fullName, age, gender) => ({fullName, age, gender});
+console.log(createPerson("HASSAN RAZA", 23, "MALE"));
+
+// Write Concise Declarative Functions
+const bicycle = {
+    gear:2,
+    setGear(newGear){
+        "use strict";
+        this.gear = newGear;
+    }
+};
+
+bicycle.setGear(4);
+console.log(bicycle.gear);
+
 // 
