@@ -1254,4 +1254,54 @@ const Vegetable = makeClass();
 const carrot = new Vegetable('carrot');
 console.log(typeof carrot);
 
-// 
+// Use getters and setters to control access to an object
+function makeClass() {
+    class Thermostat {
+        constructor(temp){
+            this._temp = 5/9 * (temp - 32);
+        }
+        // getter
+        get temperature(){
+            return this._temp;
+        }
+        // setter 
+        set temperature(updatedtemp){
+            this._temp = 5/9 * (updatedtemp - 32);
+        }
+    }
+    return Thermostat;
+}
+
+const Thermostat = makeClass();
+const thermos = new Thermostat(56);
+let temp = thermos.temperature;
+thermos.temperature = 90;
+temp = thermos.temperature;
+console.log(temp);
+
+// Understand the Difference Between import and require
+// import { capitalizeString } from "./stringFunctionCap.js";
+// const cap = capitalizeString("Hello World");
+// console.log(cap);
+
+// Use export to reuse a code block
+// const capitalizeString = (string) => {
+//     return string.charAt(0).toUpperCase() + string.slice(1);
+// }
+
+// export { capitalizeString };
+
+// export const foo = "bar";
+// export const bar = "foo";
+
+// console.log(foo);
+
+// Use * to import everything from a file
+import * as anything from "./stringFunctionCap";
+
+// Create an export fallback with export default 
+export default function subtract(x,y) {return x-y};
+
+// Import a default export
+// import subtract from "./stringFunctionCap";
+// subtract(10,9);

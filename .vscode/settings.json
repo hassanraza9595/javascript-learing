@@ -1,4 +1,5 @@
 {
     "editor.fontFamily": "\"Consolas\",\"Courier New\", Monaco",
-    "editor.fontSize": 20
+    "editor.fontSize": 20,
+    "type": "module"
 }
