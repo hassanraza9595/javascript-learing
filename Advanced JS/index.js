@@ -169,23 +169,80 @@ function f(a,b,c) transformed to function(a)(b)(c)
 // *************************** END Prototype **************************** //
 
 // *************************** CLASSES ******************************** //
+// class PersonClass {
+//     constructor(name, age){
+//         this.name = name;
+//         this.age = age;
+//     }
+//         showPerson() {
+//         console.log(this.name);
+//         console.log(this.age);
+//     }
+//        changePerson(newName, newAge) {
+//         this.name = newName;
+//         this.age = newAge;
+//     }
+// }
+
+// const person1 = new PersonClass('Hassan', 23);
+// person1.changePerson('Ali', '50');
+// console.log(person1.name + " " + person1.age);
+
+// *************************** END CLASSES **************************** //
+
+// *************************** INHERITENCE **************************** //
+
 class PersonClass {
     constructor(name, age){
         this.name = name;
         this.age = age;
     }
         showPerson() {
-        console.log(this.name);
-        console.log(this.age);
+         return this.name + " " + this.age
     }
-       changePerson(newName, newAge) {
-        this.name = newName;
-        this.age = newAge;
+    //    changePerson(newName, newAge) {
+    //     this.name = newName;
+    //     this.age = newAge;
+    // }
+}
+
+const person1 = new PersonClass('Sher Muhammad Khuhawar', 60)
+console.log(person1.showPerson());
+
+class SuperHero extends PersonClass {
+    constructor(name, age){
+        super(name, age); // this one call person class constructor
+        this.isSuperHero = true;
+    }
+    fightCrime(){
+        console.log('Fighting crime');
     }
 }
 
-const person1 = new PersonClass('Hassan', 23);
-person1.changePerson('Ali', '50');
-console.log(person1.name + " " + person1.age);
+const batman = new SuperHero('Sher Muhammad', 61);
+console.log(batman.showPerson());
+console.log(person1.showPerson());
 
-// *************************** END CLASSES **************************** //
+// ***************************END INHERITENCE**************************** //
+
+// *********************Iterables and Iterators************************* //
+
+var myLove = [1,0,1];
+for(const word of myLove){
+    console.log(word);
+}
+
+// ******************End Iterables and Iterators************************* //
+
+// ********************** Generator ************************* //
+function* generatorFunction(){  // Generator creates iterator 
+    yield 'Hello Word';
+    yield 'Elon musk is crazy';
+}
+
+const generatorObj = generatorFunction();
+for(const word of generatorObj){
+    console.log(word);
+}
+
+// ********************** End Generator ************************* //
