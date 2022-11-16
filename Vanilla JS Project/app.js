@@ -16,6 +16,7 @@ const todoList = document.querySelector('.todo-list');
 
  todoButton.addEventListener('click', addTodo);
  todoList.addEventListener('click', deleteCheck);
+
 //  filterOption.addEventListener('click', filterTodo);
  
 // ********************************************************************************************
@@ -58,6 +59,7 @@ function addTodo(event) {
 
 function deleteCheck(e){
    const item = e.target;
+   console.log(item);
     // Delete Todo
    if(item.classList[0] === "trash-btn"){
         const todo = item.parentElement;
@@ -73,7 +75,7 @@ function deleteCheck(e){
     if(item.classList[0] === "complete-btn"){
         const todo = item.parentElement;
         todo.classList.toggle("completed");
-   }     
+   }     s
 }
 
 // function filterTodo(e) {
@@ -81,16 +83,21 @@ function deleteCheck(e){
 //     todos.forEach(function(todo) {
 //         switch (e.target.value) {
 //             case "all": 
+//             console.log('all');
 //                 todo.style.display = "flex";
 //                 break;
 //             case "completed":
+//                 console.log('completed');
 //                 if(todo.classList.contains('completed')){ // error in 87 line due to todo.ClassList.contains(); 
 //                     todo.style.display = "flex";
+//                     console.log('completed');
 //                 } else {
 //                     todo.style.display = "none";
+//                     console.log('uncompleted');
 //                 }
 //                 break;  
 //             case "uncompleted":
+//                 console.log("uncompleted");
 //                 if(!todo.classList.contains('uncompleted')){
 //                     todo.style.display = "flex";
 //                 } else {
