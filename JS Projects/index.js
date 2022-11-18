@@ -1,11 +1,11 @@
 // console 
-console.log('Hello World');
+// console.log('Hello World');
 // console.log('Hassan Raza');
 
 // Variables : are placeholders to store information and data in your app.
-var firstName = "Hassan Raza";
-console.log(firstName);
-console.log(`My name is ${firstName}`);
+// var firstName = "Hassan Raza";
+// console.log(firstName);
+// console.log(`My name is ${firstName}`);
 
 // Don't use var. it's outdated.
 
@@ -37,3 +37,33 @@ Math.ceil Rounds up
 
 // Chapter 3 Functions
 
+function sayMyName(userName){
+    console.log(userName);
+}
+
+// sayMyName('Qazi');
+// sayMyName('Clever Programmer');
+
+function sum(a,b){
+    return a + b;
+}
+// console.log(sum(10,20));
+
+function calculateFoodTotal(food, tip){
+     total = food + tip; 
+     return total;
+}
+
+// console.log(calculateFoodTotal(1000, 50));
+
+// Arrow function, explicit return
+// const sumArrow = (a,b) => {
+//     return a + b;
+// }
+
+// Arrow function, implicit return
+const SUM = (a,b) => a + b 
+
+// console.log(SUM(10,15));
+
+// Chapter 4 Arrays
