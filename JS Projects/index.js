@@ -94,6 +94,42 @@ groceries.shift();
 // console.log(groceries.slice(0,2)); // start from 0 and end at 2, display element 0, 1
 
 // indexOf return the index of element 
-console.log(groceries.indexOf('banana')); // 
+// console.log(groceries.indexOf('banana')); // 
 
+// Chapter 05 Objects
 
+// const person = {
+//     name: 'Hassan', 
+//     shirt: "blue"
+// }
+
+// console.log(person.name); // dot notation
+// console.log(person['name']); // bracket notation
+
+// assign object
+// person.phone = '+9232-23012380';
+// console.log(person.phone);
+
+// ES6 arrow function 2 arguments
+// object
+// template literals
+
+const introducer = (name, shirt) => {
+    const person = {
+        name: name,
+        shirt: shirt,
+        assets: 100000,
+        liablities: 50000,
+        netWorth: function(){
+            return person.assets - person.liablities
+        }
+    }
+
+    const intro = `Hi, my name is ${person.name} and 
+    the color of my shirt is ${person.shirt} and 
+    my net worth is ${person.netWorth()}.`;
+
+    return intro;
+}
+
+console.log(introducer('Hassan Raza', 'Blue'));
