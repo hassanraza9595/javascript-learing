@@ -67,3 +67,33 @@ const SUM = (a,b) => a + b
 // console.log(SUM(10,15));
 
 // Chapter 4 Arrays
+
+groceries = ['apple', 'banana', 'pear', 'mango'];
+// console.log(groceries[2]);
+
+// Array Methods
+groceries.push('cherry'); // add an element into array at the end 
+// console.log(groceries);
+
+groceries.push('cherry'); // duplicate cherry element
+// console.log(groceries);
+
+// delete the element from the array at the end 
+groceries.pop();
+groceries.pop(); // cherry deleted 
+
+// console.log(groceries); 
+
+// add an element into array in the start
+groceries.unshift('cherry'); // cherry added at the start index 0
+// console.log(groceries);
+
+groceries.shift();
+// console.log(groceries); // cherry deleted 
+
+// console.log(groceries.slice(0,2)); // start from 0 and end at 2, display element 0, 1
+
+// indexOf return the index of element 
+console.log(groceries.indexOf('banana')); // 
+
+
