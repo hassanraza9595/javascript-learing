@@ -236,11 +236,48 @@ const wordFrequency = (pharse) =>{
 // console.log(wordFrequency('lol what you are doing here lol'));
 
 
-// Chapter 8 Array Methods
+// Chapter 8 Array Methods (map, filter, reduce)
+
+// map() --> loops and returns an array
+
+const result = [1,2,3,4,5].map(number => number * 2);
+// console.log(result);
 
 
+// filter() --> loops and returns an array and matching conditions 
+
+const filter = (numbers, greaterThan) =>{
+     const greaterArray = [];
+     for(const number of numbers){
+        if(number > greaterThan){
+            greaterArray.push(number)
+        }
+     }
+     return greaterArray;
+}
+
+// console.log(filter([1,2,3,4,5,6,7,8,9,10], 7));
+
+const no = [ 2,3,4,5,7,9];
+// console.log(no.filter(num => num > 4));
 
 
+const actors = [
+    {name: 'hassan', netWorth: 0},
+    {name: 'junaid', netWorth: 150000},
+    {name: 'asif', netWorth: 1000}
+]
+
+// console.log(actors.filter(actor => actor.netWorth > 1000 || actor.netWorth > 0));
+
+
+// reduce() --> takes a function as an argument and number and loops then back the accumulator.
+
+const numbers  = [1,2,3];
+const resu = numbers.reduce((previous, current) => previous + current);
+console.log(resu); 
+
+// 
 
 
 
