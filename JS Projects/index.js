@@ -132,4 +132,115 @@ const introducer = (name, shirt) => {
     return intro;
 }
 
-console.log(introducer('Hassan Raza', 'Blue'));
+// console.log(introducer('Hassan Raza', 'Blue'));
+
+
+// Chapter 6 Loops 
+
+const fruits = ['apple', 'banana', 'pear', 'mango'];
+
+// for(let i = 0; i < fruits.length; i++){  // don't use this for loop
+//     console.log(fruits[i]);
+// }
+
+// cleaner for loop
+// for(const fruit of fruits){
+//     console.log(fruit)
+// }
+
+// const numbers = [1,2,3,4,5,6];
+// const result = [];
+// for(const number of numbers){
+//     result.push(number*2);
+// }
+// console.log(result);
+
+const double = (numbers) => {
+    const result = [];
+    for(const number of numbers){
+        result.push(number**2);
+    }
+
+    return result;
+}
+
+// console.log(double([1,2,3,4,5,10]));
+
+const howManyLetters = () => {
+    const pharse = `hey, you can go to grocery store for me.`;
+    const result = [];
+    // for in loop gives index.
+    for(const letter in pharse){
+        // console.log(Number(letter)+1);
+        result.push(Number(letter) + 1);
+    }
+
+    return result 
+}
+
+howManyLetters();
+// console.log(howManyLetters());
+
+const sumArray = (numbers) => {
+    let result = 0;
+    // for loop
+    for(const num of numbers){
+        result += num;
+    }
+    return result;
+}
+const nums = [1,2,3,4,5]
+// console.log(sumArray(nums))
+
+// create a program which return max number
+
+const max = (numbers) => {
+    let result = numbers[0];
+    // for loop
+    for(const number of numbers){
+        if(number > result){
+            result = number;
+        }
+    }
+    return { result }; 
+}
+
+// console.log(max([0, -1, -5,3,2,1,6,3,7]));
+
+const letterFrequency = (pharse) => {
+ console.log(pharse);
+//  make an frequency object 
+ let frequency = {};
+ for(const letter of pharse){
+    // check if letter exists in frequency 
+    console.log(letter);
+    if(letter in frequency){
+        // increment the value by 1
+        frequency[letter]++;
+    } else{
+        // otherweise, set the value to 1
+        frequency[letter] = 1;
+    }
+ }   
+ return frequency;
+}
+
+// console.log(letterFrequency('Hello My Name is Hassan Raza'));
+
+// word frequency
+const wordFrequency = (pharse) =>{
+    const words = pharse.split(' ');
+    return letterFrequency(words);
+}
+
+// console.log(wordFrequency('lol what you are doing here lol'));
+
+
+// Chapter 8 Array Methods
+
+
+
+
+
+
+
