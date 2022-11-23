@@ -275,9 +275,45 @@ const actors = [
 
 const numbers  = [1,2,3];
 const resu = numbers.reduce((previous, current) => previous + current);
-console.log(resu); 
+// console.log(resu); 
 
-// 
+// ***************************************************************************************** //
+// DOM Manipulation
+
+
+// seletors
+const redDiv = document.getElementById('red');
+const greenDiv = document.getElementById('green');
+const yellowDiv = document.getElementById('yellow');
+
+// Event Listener
+redDiv.onclick = () => console.log('red');
+greenDiv.onclick = () => console.log('green');
+yellowDiv.onclick = () => console.log('yellow');
+
+const squares = document.querySelectorAll('.colorSquare');
+// for(const color of squares){
+//     console.log(color.value )
+// }
+
+// using ForEach
+const timesClicked = {'red':0, 'green': 0, 'yellow':0}
+squares.forEach(square => {
+    square.onclick = () => {
+        timesClicked[square.value]++;
+        square.innerText = timesClicked[square.value]
+    }
+});
+
+function clearGame() {
+    squares.forEach(square => {
+        square.innerText = ''
+    })
+}
+
+const clear = document.getElementById('clear');
+clear.onclick = () => clearGame();
+
 
 
 
