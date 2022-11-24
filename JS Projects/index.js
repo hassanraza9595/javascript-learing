@@ -314,6 +314,3 @@ function clearGame() {
 const clear = document.getElementById('clear');
 clear.onclick = () => clearGame();
 
-
-
-
