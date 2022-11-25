@@ -282,35 +282,63 @@ const resu = numbers.reduce((previous, current) => previous + current);
 
 
 // seletors
-const redDiv = document.getElementById('red');
-const greenDiv = document.getElementById('green');
-const yellowDiv = document.getElementById('yellow');
+// const redDiv = document.getElementById('red');
+// const greenDiv = document.getElementById('green');
+// const yellowDiv = document.getElementById('yellow');
 
 // Event Listener
-redDiv.onclick = () => console.log('red');
-greenDiv.onclick = () => console.log('green');
-yellowDiv.onclick = () => console.log('yellow');
+// redDiv.onclick = () => console.log('red');
+// greenDiv.onclick = () => console.log('green');
+// yellowDiv.onclick = () => console.log('yellow');
 
-const squares = document.querySelectorAll('.colorSquare');
+// const squares = document.querySelectorAll('.colorSquare');
 // for(const color of squares){
 //     console.log(color.value )
 // }
 
 // using ForEach
-const timesClicked = {'red':0, 'green': 0, 'yellow':0}
-squares.forEach(square => {
-    square.onclick = () => {
-        timesClicked[square.value]++;
-        square.innerText = timesClicked[square.value]
-    }
-});
+// const timesClicked = {'red':0, 'green': 0, 'yellow':0}
+// squares.forEach(square => {
+//     square.onclick = () => {
+//         timesClicked[square.value]++;
+//         square.innerText = timesClicked[square.value]
+//     }
+// });
 
-function clearGame() {
-    squares.forEach(square => {
-        square.innerText = ''
-    })
+// function clearGame() {
+//     squares.forEach(square => {
+//         square.innerText = ''
+//     })
+// }
+
+// const clear = document.getElementById('clear');
+// clear.onclick = () => clearGame();
+
+
+// select random fruit from an array
+
+// const randomFruits = (fruit) => {
+//     const randomFruit = Math.floor(Math.random() * fruit.length);
+//     return fruit[randomFruit];
+// }
+
+// const fruitss = ['Apple', 'Banana', 'Cherry', 'Mango', 'StrawBerry'];
+// console.log(randomFruits(fruitss));
+
+// if else if else
+// rainy 1, sunny (-1), overcast 0
+
+const WeatherScore = (weather) => {
+    let score;
+    if(weather === 'rainy'){
+        score = 1;
+    } else if(weather === 'sunny'){
+        score = -1;
+    } else {
+        score = 0;
+    }
+
+    return score;
 }
 
-const clear = document.getElementById('clear');
-clear.onclick = () => clearGame();
-
+console.log(WeatherScore('rainy'));
