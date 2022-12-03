@@ -1297,10 +1297,10 @@ console.log(temp);
 // console.log(foo);
 
 // Use * to import everything from a file
-import * as anything from "./stringFunctionCap";
+// import * as anything from "./stringFunctionCap";
 
 // Create an export fallback with export default 
-export default function subtract(x,y) {return x-y};
+// export default function subtract(x,y) {return x-y};
 
 // Import a default export
 // import subtract from "./stringFunctionCap";
