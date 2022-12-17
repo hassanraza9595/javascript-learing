@@ -4,6 +4,12 @@
 }
   
 .banner {
-    color: #FFD23F;
+    color: #43bb28;
     font-family: sans-serif;
+}
+
+.btn-dark{
+    background-color: #60a451;
+    color: #fff;
+    width: 400px;
 }
