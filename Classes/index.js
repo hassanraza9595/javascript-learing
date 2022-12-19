@@ -94,6 +94,22 @@ class Bank{
 }
 
 const hassanAccount = new Bank(1000);
-hassanAccount.withdraw(1000);
-hassanAccount.deposit()
 
+const depositButton = document.getElementById('deposit');
+const withdrawButton = document.getElementById('withdraw');
+const amountInput = document.getElementById('amount');
+const balancePara = document.getElementById('balance');
+
+
+
+depositButton.onclick = () => {
+    // console.log(amountInput.value);
+    hassanAccount.deposit(Number(amountInput.value));
+    balancePara.innerText = `Balance: ${hassanAccount.balance}`
+}
+
+withdrawButton.onclick = () => {
+    // console.log(amountInput.value);
+    hassanAccount.withdraw(Number(amountInput.value));
+    balancePara.innerText = `Balance: ${hassanAccount.balance}`
+}
